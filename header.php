@@ -25,7 +25,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header">
 				<div class="wrap">
 				<div class="logo">
-					<a href="index.html"><img src="<?php echo get_template_directory_uri().'/images/logo.png';?>" title="pinbal" /></a>
+					<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri().'/images/logo.png';?>" title="pinbal" /></a>
 				</div>
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
@@ -51,10 +51,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="top-searchbar">
-					<?php get_template_part('', 'searchform'); ?>
-					<form>
-						<input type="text" /><input type="submit" value="" />
-					</form>
+					<?php get_template_part('searchform'); ?>
 				</div>
 				<div class="userinfo">
 					<div class="user">

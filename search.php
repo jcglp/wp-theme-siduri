@@ -2,6 +2,13 @@
 
 	<div class="wrap">
 		<div id="main" role="main">
+
+			<?php
+			if ( have_posts() ) : ?>
+				<h3 class="info-title"><?php printf( __( 'Resultados de buscar : %s', SIDURI_TEXT_DOMAIN ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+			<?php
+			endif; ?>
+
 			<?php
 			if (have_posts()) :?>
 				<ul id="tiles">
@@ -38,31 +45,41 @@
 
 				<?php
 				endwhile; ?>
+
+				<li>
+					<div class="">
+
+
+					<?php
+					the_posts_pagination( array(
+						'mid_size' => 2,
+						'prev_text' => __( '<<', SIDURI_TEXT_DOMAIN ),
+						'next_text' => __( '>>', SIDURI_TEXT_DOMAIN ),
+					)); ?>
+					</div>
+				</li>
 				</ul>
 
+				<div  style="display:clear" class="text-center">
+
+				</div>
 
 			<?php
-			else :
-				_e( 'Ups, no se ha recuperado nada con ese criterio.', SIDURI_TEXT_DOMAIN );
+			else : ?>
+				<h3 class="info-title"><?php printf( __( 'Ups, no se ha recuperado nada con ese criterio.', SIDURI_TEXT_DOMAIN ) ); ?></h3>
 
+				<div class="artical-content"  >
+					<p><?php _e("Prueba a realizar otra búsqueda.", SIDURI_TEXT_DOMAIN); ?></p>
+
+					<div class="top-searchbar">
+						<?php get_template_part('searchform'); ?>
+					</div>
+				</div>
+
+			<?php
 			endif; ?>
 
 	  </div><!-- #id -->
-
-		<div class="sidure-post-navigation">
-			<hr>
-			<style media="screen">
-				.nav-links .page-numbers { border-radius: 50% !important;margin: 0 5px;}
-			</style>
-			<?php
-			the_posts_pagination( array(
-				'screen_reader_text' => ' ',
-				'mid_size' => 2,
-				'prev_text' => __( '<<', SIDURI_TEXT_DOMAIN ),
-				'next_text' => __( '>>', SIDURI_TEXT_DOMAIN ),
-			)); ?>
-		</div>
-
 	</div><!-- .wrap -->
 
 <?php get_footer(); ?>
