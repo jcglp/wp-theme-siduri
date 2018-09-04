@@ -64,9 +64,9 @@ $(document).ready(function(){
         $handler.wookmark(options);
       });
     }
-    /**
+    /** JCGLP Le quito el scroll infinito
      * When scrolled all the way to the bottom, add more tiles
-     */
+     *
     function onScroll() {
       // Check if we're within 100 pixels of the bottom edge of the broser window.
       var winHeight = window.innerHeight ? window.innerHeight : $window.height(), // iphone fix
@@ -80,11 +80,11 @@ $(document).ready(function(){
 
         applyLayout();
       }
-    };
+    }; */
 
     // Call the layout function for the first time
     applyLayout();
 
     // Capture scroll event.
-    $window.bind('scroll.wookmark', onScroll);
+    // $window.bind('scroll.wookmark', onScroll);
   })(jQuery);

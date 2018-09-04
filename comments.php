@@ -1,66 +1,54 @@
-<!---start-comments-section--->
+
+<?php
+if ( ! comments_open() )
+  return;
+
+?>
+
 <div class="comment-section">
   <div class="grids_of_2">
+
     <h2><?php _e('Comentarios', SIDURI_TEXT_DOMAIN); ?></h2>
-    <div class="grid1_of_2">
-      <div class="grid_img">
-        <a href=""><img src="<?php echo SIDURI_THEME_URL.'/images/pic10.jpg'; ?>" alt=""></a>
-      </div>
-      <div class="grid_text">
-        <h4 class="style1 list"><a href="#">Uku Mason</a></h4>
-        <h3 class="style">march 2, 2013 - 12.50 AM</h3>
-        <p class="para top"> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-        <a href="" class="btn1">Click to Reply</a>
-      </div>
-      <div class="clear"></div>
-    </div>
 
-    <div class="grid1_of_2 left">
-      <div class="grid_img">
-      <a href=""><img src="<?php echo SIDURI_THEME_URL.'/images/pic10.jpg'; ?>" alt=""></a>
-      </div>
-      <div class="grid_text">
-      <h4 class="style1 list"><a href="#">Designer First</a></h4>
-      <h3 class="style">march 3, 2013 - 4.00 PM</h3>
-      <p class="para top"> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-      <a href="" class="btn1">Click to Reply</a>
-      </div>
-    <div class="clear"></div>
+    <?php if ( have_comments() ) : ?>
+      <?php wp_list_comments( array(
+                                    'type' => 'comment'
+                                  , 'avatar_size' => 32
+                                  , 'callback' => 'siduri_comment'
+                                )
+                             ); ?>
 
-    </div>
-    <div class="grid1_of_2">
-    <div class="grid_img">
-    <a href=""><img src="<?php echo SIDURI_THEME_URL.'/images/pic12.jpg'; ?>" alt=""></a>
-    </div>
-    <div class="grid_text">
-    <h4 class="style1 list"><a href="#">Ro Kanth</a></h4>
-    <h3 class="style">march 2, 2013 - 12.50 AM</h3>
-    <p class="para top"> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
-    <a href="" class="btn1">Click to Reply</a>
-    </div>
-    <div class="clear"></div>
-    </div>
-    <div class="artical-commentbox">
-    <h2>Leave a Comment</h2>
-    <div class="table-form">
-    <form action="#" method="post" name="post_comment">
-    <div>
-    <label>Name<span>*</span></label>
-    <input type="text" value=" ">
-    </div>
-    <div>
-    <label>Email<span>*</span></label>
-    <input type="text" value=" ">
-    </div>
-    <div>
-    <label>Your Comment<span>*</span></label>
-    <textarea> </textarea>
-    </div>
-    </form>
-    <input type="submit" value="submit">
+    <?php endif; ?>
 
-    </div>
-    <div class="clear"> </div>
+    <div class="artical-commentbox div-comment">
+
+      <?php
+      $commenter = wp_get_current_commenter();
+      $req = get_option( 'require_name_email' );
+      $aria_req = ( $req ? " aria-required='true'" : '' );
+
+      $fields = array(
+        'author' => '<div><label for="author">'
+                      . __( 'Nombre', SIDURI_TEXT_DOMAIN )
+                      . ( $req ? '<span class="required">*</span>' : '' ) . '</label>'
+                      .'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+                      '" size="30"' . $aria_req . ' />'
+                      .'</div>',
+        'email' =>  '<div><label for="email">'
+                      . __( 'Email', SIDURI_TEXT_DOMAIN )
+                      . ( $req ? '<span class="required">*</span>' : '' ) . '</label>'
+                      . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                      '" size="30"' . $aria_req . ' />'
+                      .'</div>' );
+
+      $comments_args = array(
+        'title_reply' => '<h2>' . __('Deja un comentario', SIDURI_TEXT_DOMAIN) . '</h2>',
+        'fields'=> $fields
+
+      );
+      comment_form( $comments_args );
+      ?>
+
     </div>
   </div>
 </div>

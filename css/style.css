@@ -190,7 +190,7 @@ a.boxclose{
 	-moz-border-radius:30em;
 	-o-border-radius:30em;
 	vertical-align:middle;
-	
+
 }
 /*--//userinfo--*/
 /*----start-post-grids----*/
@@ -210,11 +210,11 @@ a.boxclose{
 .rateit span{
 	height:18px;
 	width:76px;
-	background:url(../images/start-rate.png) no-repeat 0px 0px; 
+	background:url(../images/start-rate.png) no-repeat 0px 0px;
 	display:inline-block;
 }
 .rateit span:hover{
-	background:url(../images/start-rateh.png) no-repeat 0px 0px; 
+	background:url(../images/start-rateh.png) no-repeat 0px 0px;
 }
 .post-basic-info{
 	padding: 7% 7% 5% 7%;
@@ -772,7 +772,7 @@ span.mail a:hover{
 		padding: 0.5em 0 0;
 	}
 	.artical-content p:nth-child(1){
-		display:none;	
+		display:none;
 	}
 	.userinfo {
 		width: 17%;
@@ -863,7 +863,7 @@ span.mail a:hover{
 		padding: 0.5em 0 0;
 	}
 	.artical-content p:nth-child(1){
-		display:none;	
+		display:none;
 	}
 	.userinfo {
 		display:none;
@@ -987,7 +987,7 @@ span.mail a:hover{
 		display:block;
 	}
 	.artical-content p:nth-child(1){
-		display:none;	
+		display:none;
 	}
 	.userinfo {
 		display:none;
@@ -1120,7 +1120,7 @@ span.mail a:hover{
 		display:block;
 	}
 	.artical-content p:nth-child(1){
-		display:none;	
+		display:none;
 	}
 	.userinfo {
 		display:none;
@@ -1195,3 +1195,113 @@ span.mail a:hover{
 	}
 }
 /*--//End-media Quries for 320px-monitors-*/
+
+
+/* COMENTARIOS */
+.comment-form{
+	margin: 0em auto;
+}
+.comment-form input[type="text"]{
+	font-family: 'Open Sans', sans-serif;
+	border: 1px solid rgba(192, 192, 192, 0.61);
+	outline: none;
+	padding: 12px;
+	color: #333333;
+	overflow: hidden;
+	width: 30%;
+	display: block;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+	-webkit-appearance: none;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-o-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+}
+.comment-form textarea{
+	font-family: 'Open Sans', sans-serif;
+	padding: 8px;
+	outline:none;
+	color: #333333;
+	border: 1px solid rgba(192, 192, 192, 0.61);
+	width:60%;
+	height:180px;
+	resize: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+	-webkit-appearance: none;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+	-o-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.05);
+}
+.comment-form input[type="text"]:hover,.comment-form textarea:hover{
+	border: 1px solid #B9CB41;
+}
+.comment-form input[type="submit"]{
+	font-family: 'Open Sans', sans-serif;
+	color: #5a5a5a;
+	padding: 0.8em 1.5em;
+	background: #fff;
+	text-decoration: none;
+	text-shadow: none;
+	border: 1px solid rgba(192, 192, 192, 0.61);
+	display: block;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	cursor:pointer;
+	font-size: 1em;
+	outline:none;
+}
+.comment-form input[type="submit"]:hover{
+	color:#B9CB41;
+	border: 1px solid #B9CB41;
+}
+.comment-form label{
+	display: block;
+	margin: 0.4em 0 0.5em;
+	font-family: 'Open Sans', sans-serif;
+	color:#363636;
+	font-weight:100;
+}
+.comment-form div{
+	margin:0.5em 0;
+}
+.comment-form div {
+	margin: 1em 0;
+}
+
+.info-title {
+	margin-bottom: 0.9em;
+	font: 400 28px/28px 'Open Sans', sans-serif;
+	color: #626262;
+	text-align: left;
+	font-weight: 400;
+}
+
+.sidure-post-navigation {
+	width: 100%;
+	text-align: center;
+
+}

@@ -4,6 +4,8 @@ define('SIDURI_THEME_PATH', get_template_directory() );
 define('SIDURI_THEME_URL', get_template_directory_uri() );
 define('SIDURI_THEME_VERISON', '0.0.2' );
 
+define('SIDURI_TEXT_DOMAIN', 'siduri' );
+
 
 function siduri_setup(){
 	add_theme_support( "title-tag" ) ;
@@ -60,8 +62,9 @@ function siduri_enqueue_scripts() {
 
 	}
 
-
-
-
 }
 add_action( 'wp_enqueue_scripts', 'siduri_enqueue_scripts');
+
+
+
+require_once SIDURI_THEME_PATH . '/theme/siduri_comment.php';
