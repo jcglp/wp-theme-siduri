@@ -27,6 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="logo">
 					<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri().'/images/logo.png';?>" title="pinbal" /></a>
 				</div>
+				<?php if ( has_nav_menu( 'siduri-primary-menu' ) ) : ?>
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
 				</div>
@@ -34,22 +35,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <div class="box_content">
 						<div class="box_content_center">
 						 	<div class="form_content">
-								<div class="menu_box_list">
-									<ul>
-										<li><a href="#"><span>home</span></a></li>
-										<li><a href="#"><span>About</span></a></li>
-										<li><a href="#"><span>Works</span></a></li>
-										<li><a href="#"><span>Clients</span></a></li>
-										<li><a href="#"><span>Blog</span></a></li>
-										<li><a href="contact.html"><span>Contact</span></a></li>
-										<div class="clear"> </div>
-									</ul>
-								</div>
+
+										<?php
+											wp_nav_menu(
+												array(
+													'container' => 'div',
+													'container_class' => 'menu_box_list',
+													'theme_location' => 'siduri-primary-menu',
+													'menu_class' => 'primary-menu',
+												)
+											);
+										?>
+
 								<a class="boxclose" id="boxclose"> <span> </span></a>
 							</div>
 						</div>
 					</div>
 				</div>
+				<?php endif; ?>
+
 				<div class="top-searchbar">
 					<?php get_template_part('searchform'); ?>
 				</div>

@@ -36,8 +36,6 @@ function siduri_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'siduri_enqueue_styles' );
 
 
-
-
 /**
  * Enqueue Theme Scripts
 */
@@ -50,8 +48,6 @@ function siduri_enqueue_scripts() {
 
 	if (!is_admin()) {
 		//wp_enqueue_script( 'cronista-bootstrap', SIDURI_THEME_URL . '/assets/js/bootstrap.min.js',  array( 'jquery' ), SIDURI_THEME_VERISON, true );
-
-
 
 		// ----wookmark-scripts---->
 		wp_enqueue_script( 'siduri-images', SIDURI_THEME_URL . '/js/jquery.imagesloaded.js',  array('jquery'), SIDURI_THEME_VERISON, true );
@@ -66,5 +62,12 @@ function siduri_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'siduri_enqueue_scripts');
 
 
-
 require_once SIDURI_THEME_PATH . '/theme/siduri_comment.php';
+
+
+// Register menus
+register_nav_menus(
+	array(
+		'siduri-primary-menu' => __( 'Menú Principal', SIDURI_TEXT_DOMAIN ),   // Main nav in header
+	)
+);
