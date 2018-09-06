@@ -7,8 +7,8 @@
 				<div class="single-page-artical">
 					<div class="artical-content" id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" >
 						<?php
-						if ((1==2)&&(has_post_thumbnail() )): ?>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
+						if (has_post_thumbnail() ): ?>
+							<img class="siduri-destacada" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
 						<?php
 						else: ?>
 							<img src="<?php echo get_template_directory_uri().'/images/single-post-pic.jpg';?>" >
@@ -68,8 +68,15 @@
 
 					<div class="share-artical">
 						<ul>
-							<li><a href="#"><img src="<?php echo SIDURI_THEME_URL.'/images/facebooks.png'; ?>" title="facebook">Facebook</a></li>
-							<li><a href="#"><img src="<?php echo SIDURI_THEME_URL.'/images/twiter.png'; ?>" title="Twitter">Twiiter</a></li>
+							<?php
+							$url = urlencode(get_the_permalink());
+							$title = urlencode(get_the_title());
+							$url_facebook = 'https://www.facebook.com/sharer.php?u='.$url.'&t='.$title;
+							$url_twitter	= 'http://twitter.com/share?text='.$title.'&original_referer='.$url;
+
+							?>
+							<li><a href="<?php echo $url_facebook; ?>" target="_blank"><img src="<?php echo SIDURI_THEME_URL.'/images/facebooks.png'; ?>" title="facebook">Facebook</a></li>
+							<li><a href="<?php echo $url_twitter; ?>" target="_blank"><img src="<?php echo SIDURI_THEME_URL.'/images/twiter.png'; ?>" title="Twitter">Twiiter</a></li>
 							<li><a href="#"><img src="<?php echo SIDURI_THEME_URL.'/images/google+.png'; ?>" title="google+">Google+</a></li>
 							<li><a href="#"><img src="<?php echo SIDURI_THEME_URL.'/images/rss.png'; ?>" title="rss">Rss</a></li>
 						</ul>

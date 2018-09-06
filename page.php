@@ -7,8 +7,8 @@
 				<div class="single-page-artical">
 					<div class="artical-content" id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" >
 						<?php
-						if ((1==2)&&(has_post_thumbnail() )): ?>
-							<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
+						if (has_post_thumbnail()): ?>
+							<img class="siduri-destacada" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" />
 						<?php
 						else: ?>
 							<img src="<?php echo get_template_directory_uri().'/images/single-post-pic.jpg';?>" >

@@ -23,15 +23,10 @@
 								<span><a href="#"><label> </label></a><?php the_category(', ') ?></span>
 								<p><?php the_excerpt(); ?></p>
 							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
-								</div>
-								<div class="post-share">
-									<span> </span>
-								</div>
-								<div class="clear"> </div>
-							</div>
+
+							<!-- Valorar y compartir -->
+    					<?php  get_template_part( 'post-info', 'rate-share' ); ?>
+							
 						</div>
 
 					</li>

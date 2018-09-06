@@ -1305,3 +1305,8 @@ span.mail a:hover{
 	text-align: center;
 
 }
+
+.siduri-destacada{
+	height: 512px;
+	object-fit: cover;
+}
