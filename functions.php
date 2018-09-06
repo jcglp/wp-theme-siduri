@@ -71,3 +71,6 @@ register_nav_menus(
 		'siduri-primary-menu' => __( 'Menú Principal', SIDURI_TEXT_DOMAIN ),   // Main nav in header
 	)
 );
+
+// Opciones específicas del tema
+require_once SIDURI_THEME_PATH . '/theme/siduri_options.php';
